@@ -66,7 +66,7 @@ namespace orm {
 			//default db init functions
 			try {
 				driver = get_driver_instance();
-				con = driver->connect(data.);
+				//con = driver->connect();
 			} catch( SQLException &e) {
 				
 			}
