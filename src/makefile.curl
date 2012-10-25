@@ -1,0 +1,2 @@
+all:
+	g++ curltest.cpp -o curltest.out -lcurl

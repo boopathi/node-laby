@@ -42,7 +42,7 @@ int main() {
 		res = curl_easy_perform(curl);
 		
 		if(res != CURLE_OK)
-			cerr<<curl_easy_strerror(res);
+			cerr<<curl_easy_strerror(res)<<endl;
 		
 		curl_easy_cleanup(curl);
 	}
