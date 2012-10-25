@@ -124,3 +124,4 @@ extern "C" {
 	static void init(Handle<Object> target) {
 		Labyrinth::Init(target);
 	}
+	NODE_MODULE(
