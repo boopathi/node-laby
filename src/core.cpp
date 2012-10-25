@@ -37,6 +37,7 @@
 #define FOR(i,n) for(int (i)=0;(i)<(n);(i)++)
 #define REP(i,a,b) for(int (i)=(a);(i)<(b);(i)++)
 #define REV(i,n) for(int (i)=(n)-1;(i)>=0;(i)--)
+#define PB push_back
 
 typedef long long int int64;
 typedef unsigned long long int uint64;
@@ -61,6 +62,7 @@ namespace orm {
 		ConnectionData data;
 		Driver *driver;	//MySQL Driver Instance
 		Connection *con;//MySQL Connection Instance
+		vector<Statement> history;
 		Statement *stmt;
 	public:
 		orm(ConnectionData gotData) {
@@ -84,6 +86,7 @@ namespace orm {
 using namespace node;
 using namespace v8;
 
+/*
 static Handle<Value> foo(const Arguments& args) {
 	orm::ConnectionData d;
 	strcpy(d.host,"localhost");
@@ -98,3 +101,26 @@ static Handle<Value> foo(const Arguments& args) {
 extern "C" void init(Handle<Object> target) {
 	NODE_SET_METHOD(target, "foo", foo);
 }
+*/
+
+//Now trying out by extending the ObjectWrap Class
+
+class Labyrinth: ObjectWrap {
+private:
+public:
+	Labyrinth() {
+		
+	}
+	~Labyrinth() {
+	
+	}
+	static void Init(Handle<Object> target) {
+		
+	}
+};
+
+Persistent<FuntionTemplate> Labyrinth::persistent_function_template;
+extern "C" {
+	static void init(Handle<Object> target) {
+		Labyrinth::Init(target);
+	}
