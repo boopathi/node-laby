@@ -17,7 +17,7 @@
 #include <cstring>
 #include <ctime>
 #include <climits>
-
+#include <iostream>
 #include <v8.h>
 #include <node.h>
 #include <stdexcept>
@@ -41,6 +41,8 @@
 typedef long long int int64;
 typedef unsigned long long int uint64;
 
+using namespace std;
+
 // Set functions available to the module Object
 // Those are just a set of v8_Strings
 
@@ -59,16 +61,20 @@ namespace orm {
 		ConnectionData data;
 		Driver *driver;	//MySQL Driver Instance
 		Connection *con;//MySQL Connection Instance
-		
+		Statement *stmt;
 	public:
 		orm(ConnectionData gotData) {
 			data = gotData;
 			//default db init functions
 			try {
 				driver = get_driver_instance();
-				//con = driver->connect();
+				char tcpname[] = {"tcp://"};
+				strcat(tcpname, data.host);
+				strcat(tcpname, ":");
+				strcat(tcpname, data.port);
+				con = driver->connect(tcpname,data.user,data.pass);
 			} catch( SQLException &e) {
-				
+				cout<<e.what();
 			}
 		}
 	};
@@ -79,6 +85,13 @@ using namespace node;
 using namespace v8;
 
 static Handle<Value> foo(const Arguments& args) {
+	orm::ConnectionData d;
+	strcpy(d.host,"localhost");
+	strcpy(d.port,"3306");
+	strcpy(d.user,"root");
+	strcpy(d.pass,"root");
+	strcpy(d.db,"test");
+	orm::orm a(d);
 	return String::New("Hello World");
 }
 
