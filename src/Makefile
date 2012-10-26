@@ -8,7 +8,6 @@ all:
 
 install: all
 	$(PROGRAM) $(BUILD)
-	mv ./$(BUILDDIR)/Release/labyrinth.node ./labyrinth
 
 clean:
 	rm -rf ./$(BUILDDIR)

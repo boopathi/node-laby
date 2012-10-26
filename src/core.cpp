@@ -119,9 +119,9 @@ public:
 	}
 };
 
-Persistent<FuntionTemplate> Labyrinth::persistent_function_template;
 extern "C" {
 	static void init(Handle<Object> target) {
 		Labyrinth::Init(target);
 	}
-	NODE_MODULE(
+	NODE_MODULE(labyrinth, init);
+}

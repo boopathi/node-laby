@@ -8,7 +8,7 @@
 using namespace v8;
 using namespace node;
 
-class Labyrinth {
+class Labyrinth:ObjectWrap {
 private:
 public:
 	Labyrinth();

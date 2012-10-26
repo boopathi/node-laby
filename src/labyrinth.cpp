@@ -12,12 +12,12 @@ void Labyrinth::Init(Handle<Object> target) {
 
 Handle<Value> Labyrinth::install(const Arguments& args) {
 	HandleScope scope;
-	return scope.Close(Integer::New(42));
+	return scope.Close(String::New("asdfasdf"));
 }
 
 extern "C" {
 	//just used as a wrapper
-	static void init(Handle<Object> target) {
+	void init(Handle<Object> target) {
 		Labyrinth::Init(target);
 	}
 	NODE_MODULE(labyrinth, init);
