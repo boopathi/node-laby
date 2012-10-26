@@ -1,9 +1,9 @@
-#include <v8.h>
-#include <node.h>
-
 #ifndef LABYRINTH_H_
 #define LABYRINTH_H_ me@boopathi.in
 #endif
+
+#include <v8.h>
+#include <node.h>
 
 using namespace v8;
 using namespace node;
