@@ -10,4 +10,4 @@ def build(bld):
     obj.cxxflags = ["-g","-D_FILE_OFFSET_BITS=64", "-D_LARGEFILE_SOURCE", "-Wall"]
     bld.env.append_value("LINKFLAGS",'-lmysqlcppconn')
     obj.target = "labyrinth"
-    obj.source = "core.cpp"
+    obj.source = "labyrinth.cpp"
