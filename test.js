@@ -1,5 +1,5 @@
 //var test=require("./src/labyrinth");
-var test=require("./src/build/Release/labyrinth.node");
+var test=require("./build/Release/labyrinth.node");
 
 console.log(test.install());
 

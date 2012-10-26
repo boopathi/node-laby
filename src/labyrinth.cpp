@@ -12,7 +12,7 @@ void Labyrinth::Init(Handle<Object> target) {
 
 Handle<Value> Labyrinth::install(const Arguments& args) {
 	HandleScope scope;
-	return scope.Close(String::New("asdfasdf"));
+	return scope.Close(String::New("asdfasdfasdf"));
 }
 
 extern "C" {

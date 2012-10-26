@@ -5,3 +5,4 @@
 build
 .lock-wscript
 *.out
+npm-debug.log
